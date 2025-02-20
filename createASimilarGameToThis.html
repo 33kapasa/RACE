@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catch the Ball Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+    }
+    #game-container {
+      position: relative;
+      width: 80%;
+      height: 80%;
+      border: 2px solid #333;
+      overflow: hidden;
+      background-color: #e0f7fa;
+    }
+    .ball {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    #score {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="score">Score: 0</div>
+
+  <script>
+    const gameContainer = document.getElementById("game-container");
+    const scoreDisplay = document.getElementById("score");
+    let score = 0;
+
+    // Function to create a ball
+    function createBall() {
+      const ball = document.createElement("div");
+      ball.classList.add("ball");
+
+      // Position ball randomly within the game container
+      const containerWidth = gameContainer.clientWidth;
+      const containerHeight = gameContainer.clientHeight;
+      const ballSize = 50;
+
+      const randomX = Math.floor(Math.random() * (containerWidth - ballSize));
+      const randomY = Math.floor(Math.random() * (containerHeight - ballSize));
+
+      ball.style.left = ${randomX}px;
+      ball.style.top = ${randomY}px;
+
+      // Add click event to increase score and remove the ball
+      ball.addEventListener("click", () => {
+        score++;
+        scoreDisplay.textContent = Score: ${score};
+        ball.remove();
+        createBall(); // Create a new ball after clicking
+      });
+
+      gameContainer.appendChild(ball);
+
+      // Remove ball if not clicked within 3 seconds
+      setTimeout(() => {
+        if (document.body.contains(ball)) {
+          ball.remove();
+          createBall(); // Create a new ball after the timeout
+        }
+      }, 3000);
+    }
+
+    // Start the game by creating the first ball
+    createBall();
+  </script>
+</body>
+</html>

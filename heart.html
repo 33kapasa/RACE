@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+     img {
+        height: 360px;
+        width: 360px;
+     }
+</style>
+<body>
+    <img 
+    id = "light"
+    src="https://t3.ftcdn.net/jpg/03/21/22/56/360_F_321225614_eUlLLhZXqwbjEYVEeSTnf6vV3PYo1DzV.jpg" 
+    alt="lightBulb"/>
+
+<br />
+<br />
+<button onclick="turnOn()">Turn red</button>
+<button onclick="turnOff()">Turn white</button>
+<button onclick="hideBulb()">nothing</button>
+
+
+<script>
+    const bulb = document.getElementById("light")
+    function turnOn() { 
+
+    
+        
+        bulb.src = 
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png"
+         }
+
+         function turnOff() {
+    
+    //const bulb = document.getElementById("light")
+    bulb.src = 
+    "https://t3.ftcdn.net/jpg/03/21/22/56/360_F_321225614_eUlLLhZXqwbjEYVEeSTnf6vV3PYo1DzV.jpg"
+     }
+
+     function hideBulb() {
+    
+    //const bulb = document.getElementById("light")
+    bulb.style.display = "none";
+    
+     }
+
+
+
+</script>
+
+
+
+</body>
+</html>

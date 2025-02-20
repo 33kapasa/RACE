@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     img {
+        height: 360px;
+        width: 360px;
+     }
+</style>
+<body>
+
+    
+
+    <img 
+    id = "light"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXBe8IC3_h2bC0BqdONPeNMFEQXGIpuac7_A&s" 
+    alt="pond"/>
+
+<br />
+<br />
+<button onclick="turnBlue()">Turn Blue</button>
+<button onclick="turnColorful()">Turn Colorful</button>
+<button onclick="hidePond()">Turn Nothing</button>
+
+
+<script>
+    const pond = document.getElementById("light")
+    function turnColorful() { 
+
+    
+        
+        bulb.src = 
+        "https://img.freepik.com/premium-photo/koi-pond-colorful-decorative-fish-float-artificial-pond-view-from_926199-87060.jpg"
+         }
+
+         function turnBlue() {
+    
+    //const pond = document.getElementById("light")
+    bulb.src = 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXBe8IC3_h2bC0BqdONPeNMFEQXGIpuac7_A&s"
+     }
+
+     function hidePond() {
+    
+    //const pond = document.getElementById("light")
+    pond.style.display = "none";
+    
+     }
+
+
+
+</script>
+
+
+
+    
+</body>
+</html>

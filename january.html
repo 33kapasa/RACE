@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        background: transparent;
+        color: #fcbe24;
+        padding: 0 24px;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+      }
+      h1 {
+        background-color: grey;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <div>
+      <h1 id="myText">
+        Click the below button to change the background color of the text.
+      </h1>
+    </div>
+    <div>
+      <button onclick="changeBackgroundColor()">Change Color</button>
+    </div>
+
+    <script>
+      function changeBackgroundColor() {
+        const element = document.getElementById("myText") 
+        element.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString();
+      }
+    </script>
+  </body>
+</html>

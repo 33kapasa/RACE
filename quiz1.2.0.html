@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-color: white;
+    }
+    .question {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .answer-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+    }
+    .answer-btn:hover {
+      background-color: #0056b3;
+    }
+    .score {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div id="question" class="question">Loading...</div>
+    <div id="answers" class="answers"></div>
+    <div id="score" class="score"></div>
+    <button id="restart" style="display: none;" class="answer-btn">Play Again</button>
+  </div>
+  <script
+  
+   src="quiz.js">
+
+</script>
+</body>
+</html>

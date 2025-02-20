@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adventure layout: explained</title>
+
+    <style>
+
+        body {
+             text-align:center;
+             border: 2px solid #000000;
+
+        }
+
+      p {
+        color: #FFFFFF;
+      }
+
+      h1 {
+        color: #FFFFFF;
+        font-family:Arial, Helvetica, sans-serif;
+        background-color: #ff0000;
+         padding: 10px 10px 30px 10px;
+      }
+
+      img {
+        height: 250px;
+        width: 250px;
+      }
+
+      .outer-container {
+
+            background-color: blue; 
+
+            padding: 20px;
+
+}
+
+
+
+.inner-container {
+
+      background-color: yellow; 
+
+      padding: 10px;
+
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Layout Adventure</h1>
+
+    
+    <h4 id="par"> 
+      Today, I'm going on a journey to explore new places and learn
+      amazing things. It's going to be so much fun!
+    </h4>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDOtHGqrSF-T9pv_ojqHewEHOFgTCRM-MGNA&s" alt="plant">
+
+    <p class="outer-container"> @ 2023 My Layout Adventure </p>
+
+
+
+    <h1 id="welcome">hello, world</h1>
+    <button onclick="changeContent()">Click Me!</button>
+
+    <script>
+        function changeContent() {
+           document.getElementById('welcome').textContent = 'JavaScript is awesomme!' 
+
+        }
+    </script>
+
+</body>
+</html>

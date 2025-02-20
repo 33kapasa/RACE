@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprite Race Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      .game-container {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        height: 300px;
+        border: 2px solid #333;
+        overflow: hidden;
+        background: linear-gradient(to right, #f4f4f9 80%, #ffeb3b);
+      }
+      .sprite {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        transition: left 0.1s;
+      }
+      .sprite-1 {
+        background-color: red;
+        left: 0;
+      }
+      .sprite-2 {
+        background-color: blue;
+        left: 0;
+        top: 0;
+      }
+      .finish-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        background-color: green;
+      }
+      .message {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sprite Race Game</h1>
+    <div class="game-container">
+      <div class="sprite sprite-1" id="sprite1"></div>
+      <div class="sprite sprite-2" id="sprite2"></div>
+      <div class="finish-line"></div>
+    </div>
+    <div class="message" id="message"></div>
+
+    <script>
+
+        const sprite1 = document.getElementById("sprite1")
+        const sprite2 = document.getElementById("sprite2")
+        const message = document.getElementById("message")
+
+        const finshLine = document.querySelector(".game-container").offsetWidth - 60
+
+        let sprite1Position = 0;
+        let sprite2Position = 0;
+
+        document.addEventListener("keydown", (e) => {
+            if(message.textContent) return;
+            if(e.key === "ArrowRight") {
+                sprite1Position += 10;
+                sprite1.style.left = sprite1Position + "px"
+            } else if (e.key === "d") {
+                sprite2Position += 10;
+                sprite2.style.left = sprite2Position + "px"
+            }
+
+            checkWinner()
+        })
+
+
+
+       
+        function checkWinner() {
+            if(sprite1Position >= finishLine) {
+                message.textContent = "Sprite 1 (Red) Wins!"
+                stopGame()
+            } else if (sprite2Position >= finishLine) {
+                message.textContent = "Sprite 2 (Blue) Wins!"
+                stopGame()
+            }
+        }
+
+        function stopGame() {
+            sprite1Position = 0;
+            sprite2Position = 0;
+            document.removeEventListener("keydown", moveSprites)
+        }
+     
+    </script>
+  </body>
+</html>

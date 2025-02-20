@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spirit Racing Game</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: yellow;
+}
+
+.game-container {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    border: 5px solid darkorchid;
+    background: purple; 
+}
+
+.road {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 100%;
+    background-color: plum;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.player1 {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    width: 30px;
+    height: 60px;
+    background-color: fuchsia; 
+    transform: translateX(-50%);
+    z-index: 2;
+}
+</style>
+<body>
+
+    <h2>Spirit Race Game</h2>
+    <div class="game-container">
+        <div class="player1" id="car"></div>
+        <div class="road"></div>
+    </div>
+
+    <img src="data:image/jpeg;base64,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" alt="raceFlag">
+    <script>
+        
+    </script>
+</body>
+</html>
